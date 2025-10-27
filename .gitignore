@@ -1,0 +1,25 @@
+# Environment variables
+.env
+
+# Node dependencies
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Editor & system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build / temp
+dist/
+build/
+*.tmp
+*.temp
+
+# Screenshot & testing images (opsional)
+image*.png
+screenshots/

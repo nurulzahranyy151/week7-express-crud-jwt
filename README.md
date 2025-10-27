@@ -1,20 +1,82 @@
+# **WEEK7 – EXPRESS CRUD JWT AUTH**
+
+Mini Project – Pemrograman Web Lanjut B  
+> REST API sederhana menggunakan **Express.js**, **MySQL**, dan **JWT Authentication**  
+
+---
+
+## 👩‍💻 **By**
+**Nurul Qalbi Zahrani**  
+**F1D022150**
+
+---
+
+## 🚀 **Deskripsi Singkat**
+Project ini merupakan implementasi REST API menggunakan **Express.js** dan **MySQL**, dilengkapi fitur **JWT Authentication** untuk keamanan akses data.
+Sistem ini memungkinkan pengguna melakukan **Register**, **Login**, dan mengelola data dengan mekanisme **CRUD**, yang hanya dapat diakses jika pengguna memiliki **token valid**.
+
+---
+
+## 🧩 **Struktur Folder**
+WEEK7-EXPRESS-CRUD-JWT/
+│
+├── src/
+│ ├── controllers/
+│ │ └── authController.js
+│ ├── middleware/
+│ │ ├── authenticateToken.js
+│ │ ├── log.js
+│ │ └── errorHandler.js
+│ ├── models/
+│ │ └── orderModel.js
+│ └── routes/
+│ └── authRoutes.js
+│
+├── .env
+├── .gitignore
+├── api.http
+├── package.json
+├── package-lock.json
+└── README.md
+
+## ⚙️ **Langkah Instalasi**
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/<username>/week7-express-crud-jwt.git
+cd week7-express-crud-jwt
+```
+
+### Install Dependencies
+npm install express mysql2 dotenv jsonwebtoken bcrypt nodemon
 install jsonwebtoken dan bcrypt
 ![alt text](image.png)
 
-create table
+### Jalankan Server
+npm run dev
+
+## HASIL
+
+### create table
 ![alt text](image-1.png)
 
-npm run dev
+### npm run dev
 ![alt text](image-2.png)
 
-uji coba postman POST register
+### uji coba postman POST register
 ![alt text](image-3.png)
 
-uji coba postman POST login
+### uji coba postman POST login
 ![alt text](image-4.png)
 
-message sebelum ditambahkan headers authorization
+### message sebelum ditambahkan headers authorization
 ![alt text](image-5.png)
 
-setelah ditambahkan header + token
+### setelah ditambahkan header + token
 ![alt text](image-6.png)
+
+## 🧭 Kesimpulan
+
+Dengan dibuatnya REST API ini, pengelolaan data dan autentikasi pengguna menjadi lebih aman dan efisien.
+Proyek ini menunjukkan penerapan konsep CRUD, MVC, serta JWT Authentication menggunakan Express.js dan MySQL dengan struktur yang rapi dan mudah dikembangkan lebih lanjut.
+

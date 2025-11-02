@@ -16,21 +16,32 @@ Project ini merupakan implementasi REST API menggunakan **Express.js** dan **MyS
 Sistem ini memungkinkan pengguna melakukan **Register**, **Login**, dan mengelola data dengan mekanisme **CRUD**, yang hanya dapat diakses jika pengguna memiliki **token valid**.
 
 ---
+## **Fitur Utama**
 
+1. Register & Login User dengan password hashing menggunakan bcrypt.
+2. CRUD (Create, Read, Update, Delete) untuk data pengguna atau entitas lain (contoh: order).
+3. Proteksi Route menggunakan JWT, sehingga hanya pengguna dengan token valid yang dapat mengakses endpoint tertentu.
+4. Middleware tambahan seperti logging dan error handling untuk manajemen server yang lebih baik.
+
+🧩 Struktur Folder
+---
 ## 🧩 **Struktur Folder**
 WEEK7-EXPRESS-CRUD-JWT/
 │
 ├── src/
-│ ├── controllers/
-│ │ └── authController.js
-│ ├── middleware/
-│ │ ├── authenticateToken.js
-│ │ ├── log.js
-│ │ └── errorHandler.js
-│ ├── models/
-│ │ └── orderModel.js
-│ └── routes/
-│ └── authRoutes.js
+│   ├── controllers/
+│   │   └── authController.js
+│   │
+│   ├── middleware/
+│   │   ├── authenticateToken.js
+│   │   ├── log.js
+│   │   └── errorHandler.js
+│   │
+│   ├── models/
+│   │   └── orderModel.js
+│   │
+│   └── routes/
+│       └── authRoutes.js
 │
 ├── .env
 ├── .gitignore
@@ -38,6 +49,7 @@ WEEK7-EXPRESS-CRUD-JWT/
 ├── package.json
 ├── package-lock.json
 └── README.md
+
 
 ## ⚙️ **Langkah Instalasi**
 
@@ -66,14 +78,22 @@ npm run dev
 ### uji coba postman POST register
 ![alt text](image-3.png)
 
+Data berhasil disimpan ke database; password tidak disimpan dalam bentuk teks asli (plain text), melainkan dalam bentuk hash.
+
 ### uji coba postman POST login
 ![alt text](image-4.png)
+
+Kredensial cocok. Server menghasilkan access token yang berisi payload user, ditandatangani dengan secret key. Token ini digunakan untuk mengakses route priva
 
 ### message sebelum ditambahkan headers authorization
 ![alt text](image-5.png)
 
+Middleware authenticateToken memblokir request dan mengembalikan status 401 Unauthorized, menandakan permintaan tidak memiliki token valid.
+
 ### setelah ditambahkan header + token
 ![alt text](image-6.png)
+
+Token diverifikasi menggunakan jwt.verify(). Jika valid, middleware melanjutkan ke controller dan data dari database dikembalikan sebagai response JSON.
 
 ## 🧭 Kesimpulan
 
